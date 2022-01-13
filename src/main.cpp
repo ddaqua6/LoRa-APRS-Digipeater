@@ -33,7 +33,12 @@ void setup() {
 
   String loRa_str_Bake = (String)LoRa_str_call + ">" + String(LoRa_str_Dest) + ":!" + (String)LoRa_str_Lat + (String)LoRa_str_Overlay + (String)LoRa_str_Lon + (String)LoRa_str_Symbol+(String)LoRa_str_Comment;
   LoRa_send(loRa_str_Bake, 1);
-  LoRa_display("Send Bake",0,20);
+  // startup message
+  //delay(3000);
+  //String loRa_str_StatusStart = (String)LoRa_str_call + ">" + String(LoRa_str_Dest) + "::OK0ABC   :Startup of ESP32 happened - Digipeater";
+  //LoRa_send(loRa_str_StatusStart, 1);
+  // end startup message
+  LoRa_display("Send Beacon",0,20);
   delay(3000);
   LoRaLastBeacon = now();
 }
@@ -41,7 +46,7 @@ void setup() {
 void loop() {
   LoRaNextBeacon =   (LoRa_Timer_Bake*60) - (now() -LoRaLastBeacon);
 
-  LoRa_display("Next Bake : "+LoRaGetTime(LoRaNextBeacon),0,20);
+  LoRa_display("Next Beacon: "+LoRaGetTime(LoRaNextBeacon),0,20);
  
   if (millis() > l_Timer_Bake_Send + l_Timer_Bake ) {
     l_Timer_Bake = millis();
@@ -50,7 +55,7 @@ void loop() {
     LoRa_send(loRa_str_Bake, 1);
     l_Timer_Display = millis();
     display.dim(false);
-    LoRa_display("Send Bake",0,20);
+    LoRa_display("Send Beacon",0,20);
     delay(3000);
     LoRaLastBeacon = now();
   }
@@ -75,6 +80,7 @@ void loop() {
     String message;
     String digiPath;
     String digis[8];
+    String statusMessage;
 
     while (LoRa.available()) {
 
@@ -221,6 +227,11 @@ void loop() {
       LoRa_incoming_Data = LoRaHeader + sourceCall + ">" + destCall + digiPath + ":" + message;
       LoRa_send(LoRa_incoming_Data,0);
       LoRa_display(String(sourceCall + " repeated!"), 0, 20);
+      delay(3000);
+      // send status
+      statusMessage = String(LoRa_str_call) + ">" + String(LoRa_str_Dest) + ":>Last RX: " + String(sourceCall);
+      LoRa_send(statusMessage,1);
+      LoRa_display(String("Send Status beacon"), 0, 20);
       delay(3000);
 
 bad_packet:
