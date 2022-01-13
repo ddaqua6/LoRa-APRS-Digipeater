@@ -27,14 +27,15 @@
 #define LoRa_Screen_Height 64                         // Screen Height
 #define Lora_Screen_Timeout 1                         // Screen Timeout in Minutes
 
-#define LoRa_str_call "NOCALL"                        // Call for Digipeater
+#define LoRa_str_call "NOCALL-12"                        // Call for Digipeater
 #define LoRa_str_Lat "0000.00N"                       // Latitude
 #define LoRa_str_Lon "00000.00E"                      // Longitude
 #define LoRa_str_Symbol "&"                           // Symbol
 #define LoRa_str_Overlay "L"                          // Overlay
 #define LoRa_str_Comment "LoRa Digipeater"            // Comment
-#define LoRa_str_Dest "APZAVR"                        // Destination Call
-#define LoRa_Timer_Bake 45                            // Baken Timer in Minutes
+
+#define LoRa_str_Dest "APLGD1"                        // Destination Call
+#define LoRa_Timer_Bake 20                            // Beacon Timer in Minutes
 
 #define LoRa_Serial_Baudrate 9600
 
