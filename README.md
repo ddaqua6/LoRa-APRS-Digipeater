@@ -4,7 +4,7 @@
 When hearing a signal, the digipeater sends a status message (you can see it for example in APRS.fi with purple color) with callsign of the heared station. You can more easily track your station's coverage with this function.
 
 Optional: You can enable a message sending to your another APRS station when the digipeater is restarted (eg. due to power shortage). To achieve this, uncomment lines 37-39 in main.cpp, and replace OK0ABC with YOUR CALLSIGN with SSID. Please keep in mind, that callsign between the : : needs to have 9 characters, if your callsign has less, you need to keep spaces so the total amount of characters is 9.
-Example: If your callsign is OK0ABC-7, keep 1 space after it (::OK0ABC-7 :). If your callsign is OK0AB, keep 4 spaces (::OK0AB    :)
+Example: If your callsign is OK0ABC-7, keep 1 space after it (::OK0ABC-7_:). If your callsign is OK0AB, keep 4 spaces (::OK0AB____:)
 It is really important to fulfill the required format, if you don't understand this, please keep the lines commented.
 <br><br>
 <b>How to setup your digipeater</b><br><br>
