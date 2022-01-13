@@ -1,6 +1,6 @@
 # LoRa APRS Digipeater
 
-<b>Significant differences between original DO2JMG's version and my version (OK2DDS)</b>
+<b>Significant differences between original DO2JMG's version and my version (OK2DDS)</b><br>
 When hearing a signal, the digipeater sends a status message (you can see it for example in APRS.fi with purple color) with callsign of the heared station. You can more easily track your station's coverage with this function.
 
 Optional: You can enable a message sending to your another APRS station when the digipeater is restarted (eg. due to power shortage). To achieve this, uncomment lines 37-39 in main.cpp, and replace OK0ABC with YOUR CALLSIGN with SSID. Please keep in mind, that callsign between the : : needs to have 9 characters, if your callsign has less, you need to keep spaces so the total amount of characters is 9.
