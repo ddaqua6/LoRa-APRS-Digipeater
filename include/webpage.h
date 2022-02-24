@@ -1,0 +1,8 @@
+#define webPageStart "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;} body { height: 99%;} footer { color: #696969; width: 99%; text-align: center;} a { color: #696969;} a:hover { color: #002fba;} a:visited { color: #696969;} .beacon-request { font-family: Helvetica;}</style><title>LoRa Digipeater</title></head><body><h1>LoRa Digipeater "
+#define webPageEnd "<br><br><a class=\"beacon-request\" href=\"/beacon\">Reset beacon timer</a><br><a class=\"beacon-request\" href=\"/display-on\">Wake up display</a><br><br><br><footer>Created by <a href=\"http://www.ok2dds.cz\">OK2DDS</a>, source available on <a href=\"https://github.com/ddaqua6/LoRa-APRS-Digipeater\">GitHub</a>.</footer></body></html>"
+#define webBeaconSent "<script>alert('Beacon requested'); window.location.href = '/';</script>"
+#define webDisplayWakeUp "<script>alert('Display woke up'); window.location.href = '/';</script>"
+#define webUpCalc1 "<script>var timest1 = new Date(Date.now() - "
+#define webUpCalc2 "); document.write(timest1.toDateString()); document.write(', '); document.write(timest1.toTimeString());</script>"
+#define webTimeCalc1 "<script>var timest2 = new Date(Date.now() + "
+#define webTimeCalc2 "); document.write(timest2.toTimeString());</script>"
