@@ -277,7 +277,7 @@ void loop() {
         else
           digiPath = digiPath.substring(0, paradigmIndex - 1) + "," + String(LoRa_str_call) + "*,WIDE1*" + digiPath.substring(paradigmIndex + 7);
         // add SNR and RSSI
-        message = message + " SNR=" + String(LoRa.packetSnr()) + "dB RSSI=" + String(LoRa.packetRssi()) + "dB";
+        // message = message + " SNR=" + String(LoRa.packetSnr()) + "dB RSSI=" + String(LoRa.packetRssi()) + "dB";
         if (digiPath.indexOf(",") != 0)
           digiPath = "," + digiPath;
         LoRa_incoming_Data = LoRaHeader + sourceCall + ">" + destCall + digiPath + ":" + message;
