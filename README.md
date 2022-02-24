@@ -9,6 +9,7 @@ When hearing a signal, the digipeater sends a status message (you can see it for
 Edit <code>include/config.h</code>:<br><br>
 Enter your callsign (LoRa_str_call). Recommended SSID is -3 for digipeater.<br>
 Enter your station position in raw APRS format to following lines, please keep the amount of numbers as designated.<br>
+Enter your callsign once again into MyHTCall.<br>
 Optionally, edit the comment. It is recommended to keep the word "LoRa" in it, so LoRa users can find it easily.<br>
 Optionally, edit the LoRa_Timer_Bake for beacon timeout in minutes. This should not be lower than 40, if you want to see your station on APRS.fi permanently, then it shouldn't be more than 60 minutes.<br><br>
 If you want to see web dashboard of your digipeater, enable Wi-Fi and enter SSID and password. This is <b>fully optional</b> and not required. You can run your digipeater fully offline, all packets go through LoRa. This is how it looks:<br>![image](https://user-images.githubusercontent.com/76646834/155492745-6807ac86-fd2f-4387-b6c9-4480524e20f3.png)
