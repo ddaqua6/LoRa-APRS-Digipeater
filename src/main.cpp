@@ -70,11 +70,11 @@ void setup() {
   String loRa_str_Bake = (String)LoRa_str_call + ">" + String(LoRa_str_Dest) + ":!" + (String)LoRa_str_Lat + (String)LoRa_str_Overlay + (String)LoRa_str_Lon + (String)LoRa_str_Symbol+(String)LoRa_str_Comment;
   LoRa_send(loRa_str_Bake, 1);
   // status beacon
-  delay(3000);
-  String loRa_str_StatusStart = (String)LoRa_str_call + ">" + String(LoRa_str_Dest) + "::" + htCall + ":Startup of ESP32 happened - Digipeater";
-  LoRa_send(loRa_str_StatusStart, 1);
+  //delay(3000);
+  //String loRa_str_StatusStart = (String)LoRa_str_call + ">" + String(LoRa_str_Dest) + "::" + htCall + ":Startup of ESP32 happened - Digipeater";
+  //LoRa_send(loRa_str_StatusStart, 1);
   //
-  LoRa_display("Sent Beacons",0,20);
+  LoRa_display("Sent Beacon",0,20);
   delay(3000);
   LoRaLastBeacon = now();
 }
