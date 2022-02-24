@@ -1,19 +1,19 @@
 # LoRa APRS Digipeater
 
-<b>Significant differences between original DO2JMG's version and my version (OK2DDS)</b><br><br>
-When hearing a signal, the digipeater sends a status message (you can see it for example in APRS.fi with purple color) with callsign of the heared station. You can more easily track your station's coverage with this function.
+This is digipeater for LoRa APRS. It repeats packets (which contain WIDE1-1), so it can widen coverage of stations using it. This digi can run fully offline, it's ideal for places without internet connection. (But it has the option for web dashboard.)
 
-Optional: You can enable a message sending to your another APRS station when the digipeater is restarted (eg. due to power shortage). To achieve this, uncomment lines 37-39 in main.cpp, and replace OK0ABC with YOUR CALLSIGN with SSID. Please keep in mind, that callsign between the : : needs to have 9 characters, if your callsign has less, you need to keep spaces so the total amount of characters is 9.<br>
-Example: If your callsign is OK0ABC-7, keep 1 space after it (::OK0ABC-7_:). If your callsign is OK0AB, keep 4 spaces (::OK0AB____:)
-It is really important to fulfill the required format, if you don't understand this, please keep the lines commented.
+<b>Significant differences between original DO2JMG's version and my version (OK2DDS)</b><br><br>
+When hearing a signal, the digipeater sends a status message (you can see it for example in APRS.fi with purple color) with callsign of the heared station. You can more easily track your station's coverage with this function. The digi has web server. When connected to WiFi, you can view the dashboard and set some things via web dashboard. Also, digipeating process was upgraded to be in coordinance with APRS specifications.
 <br><br>
 <b>How to setup your digipeater</b><br><br>
-In include/config.h, edit following lines:<br>
-Enter your callsign into line 30 (LoRa_str_call). Recommended SSID is -12.<br>
+Edit <code>include/config.h</code>:<br><br>
+Enter your callsign (LoRa_str_call). Recommended SSID is -3 for digipeater.<br>
 Enter your station position in raw APRS format to following lines, please keep the amount of numbers as designated.<br>
 Optionally, edit the comment. It is recommended to keep the word "LoRa" in it, so LoRa users can find it easily.<br>
-Optionally, edit the LoRa_Timer_Bake for beacon timeout in minutes. This should not be lower than 15, if you want to see your station on APRS.fi permanently, then it shouldn't be more than 60 minutes.<br>
-You can experimentally edit whatever you want, but please keep in mind that you can make negative effect onto APRS net if you set your station incorrectly.
+Optionally, edit the LoRa_Timer_Bake for beacon timeout in minutes. This should not be lower than 40, if you want to see your station on APRS.fi permanently, then it shouldn't be more than 60 minutes.<br><br>
+If you want to see web dashboard of your digipeater, enable Wi-Fi and enter SSID and password. This is <b>fully optional</b> and not required. You can run your digipeater fully offline, all packets go through LoRa. This is how it looks:<br>![image](https://user-images.githubusercontent.com/76646834/155492745-6807ac86-fd2f-4387-b6c9-4480524e20f3.png)
+
+You can experimentally edit whatever you want, but please keep in mind that you can make very negative effect onto APRS net if you set your station incorrectly. Generally, if you don't know what are you doing, keep the default setting. Edit LoRa settings in <code>include/lora_cfg.h</code> to change frequency or for other experimental settings.
 <br><br>
 <b>Supported boards</b>
 - Heltec WiFi LoRa 32 V1 (433MHz SX1278)
@@ -23,17 +23,7 @@ You can experimentally edit whatever you want, but please keep in mind that you 
 - TTGO Lora32 v2.1
 - TTGO Lora32 v2
 
-<b>Path that will digipeated</b><br>
-- WIDE1-1 or more
-- DST Call with -1
-
-<b>Path that will not digipeated</b><br>
-- Own Call
-- NOGATE
-- RFONLY
-- DST-Path and WIDE in one Path
-
-<b>Require LoRa module pinout definitions and Display pinout in</b> <code>config.h</code>:
+<b>Require LoRa module pinout definitions and Display pinout in</b> <code>include/lora_cfg.h</code>:
 
 <u>LoRa Module</u><br>
 <br>
