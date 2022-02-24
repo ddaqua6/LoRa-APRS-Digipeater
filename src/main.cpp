@@ -284,13 +284,14 @@ void loop() {
         LoRa_send(LoRa_incoming_Data,0);
         LoRa_display(String(sourceCall + " repeated!"), 0, 20);
       } else {
-        digiPath = digiPath + "," + String(LoRa_str_call) + "*";
+        /*digiPath = digiPath + "," + String(LoRa_str_call) + "*";
         if (digiPath.indexOf(",") != 0)
           digiPath = "," + digiPath;
         // do not add SNR and RSSI
         LoRa_incoming_Data = LoRaHeader + sourceCall + ">" + destCall + digiPath + ":" + message;
         LoRa_send(LoRa_incoming_Data,0);
-        LoRa_display(String(sourceCall + " repeated!"), 0, 20);
+        LoRa_display(String(sourceCall + " repeated!"), 0, 20);*/
+	// do not digipeat without WIDE1-1
       }
 
       delay(3000);

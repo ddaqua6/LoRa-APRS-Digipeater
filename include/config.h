@@ -10,7 +10,7 @@
 #define LoRa_Status_Protection_Time 10                // Time in minutes to wait until next status can be sent
                                                       // set 30 minutes for wide-coverage digi, 5 minutes for local digi and 2 minutes for private digi
 
-#define UseWifi true                                  // WiFi On/Off
+#define UseWifi false                                  // WiFi On/Off
 						      // If turned on, digi will display web dashboard
 
 const char* ssid = "SSID";                            // WiFi SSID
