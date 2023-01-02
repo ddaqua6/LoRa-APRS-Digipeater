@@ -1,5 +1,7 @@
 # LoRa APRS Digipeater
-
+<br>
+<b>THIS REPOSITORY HAS BEEN REPLACED BY NEWER VERSION AT <a href="https://github.com/ddaqua6/LoRa_APRS_Meteo">LoRa_APRS_Meteo</a>, which also supports digipeater, as well as IGate and even a meteostation!</b>
+<br><br><br>
 This is digipeater for LoRa APRS. It repeats packets (which contain WIDE1-1), so it can widen coverage of stations using it. This digi can run fully offline, it's ideal for places without internet connection. (But it has the option for web dashboard.)
 
 <b>Significant differences between original DO2JMG's version and my version (OK2DDS)</b><br><br>
